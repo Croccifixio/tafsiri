@@ -1,0 +1,38 @@
+{
+  "name": "@croccifixio/tafsiri",
+  "version": "1.0.1",
+  "description": "",
+  "bin": {
+    "tafsiri": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "babel src -d dist --copy-files"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "marked": "^0.6.2",
+    "prismjs": "^1.17.1",
+    "yargs": "^13.2.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.3.2",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.2.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.11.0",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2"
+  }
+}
