@@ -9,8 +9,8 @@ const { d: assetsDirectory, b: buildDirectory, w: watch } = yargs
   .help('h')
   .alias('h', 'help')
   .alias('w', 'watch')
-  .alias('d', 'src-directory')
-  .alias('b', 'build-directory')
+  .alias('d', 'src')
+  .alias('b', 'build')
   .argv
 
 function main() {
