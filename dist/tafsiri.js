@@ -29,10 +29,7 @@ const CHOKIDAR_OPTIONS = {
 class Tafsiri {
   constructor() {
     this.buildMarkdownFiles = () => {
-      const markdownFiles = fs
-        .readdirSync(this.assetsDirectory)
-        .filter(filename => filename.endsWith('.md'))
-
+      const markdownFiles = fs.readdirSync(this.assetsDirectory).filter(filename => filename.endsWith('.md'));
       markdownFiles.forEach(file => {
         const filePath = path.join(this.assetsDirectory, file);
         this.processMarkdown(filePath);
@@ -59,7 +56,7 @@ class Tafsiri {
       chokidar.watch(markdownFiles, CHOKIDAR_OPTIONS).on('change', this.processMarkdown);
     };
 
-    this.init = async (assetsDirectory = 'blog', buildDirectory = 'blog/.temp', watch = false) => {
+    this.init = async (assetsDirectory = 'blog', buildDirectory = `${assetsDirectory}/.temp`, watch = false) => {
       this.assetsDirectory = path.join(cwd, assetsDirectory);
       this.buildDirectory = path.join(cwd, buildDirectory);
       if (watch) this.watchMarkdownFiles();else this.buildMarkdownFiles();

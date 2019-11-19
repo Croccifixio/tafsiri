@@ -60,7 +60,7 @@ class Tafsiri {
       .on('change', this.processMarkdown)
   }
 
-  init = async (assetsDirectory = 'blog', buildDirectory = 'blog/.temp', watch = false) => {
+  init = async (assetsDirectory = 'blog', buildDirectory = `${assetsDirectory}/.temp`, watch = false) => {
     this.assetsDirectory = path.join(cwd, assetsDirectory)
     this.buildDirectory = path.join(cwd, buildDirectory)
 
