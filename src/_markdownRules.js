@@ -22,7 +22,7 @@ const handleKeyboardInput = [/\^{2}(.+?)\^{2}/g, '<kbd class="key">$1</kbd>']
 const handleInnerNestedKeyboardInput = [/(<\/kbd>)\s\+\s(<kbd)/g, '$1&nbsp;+&nbsp;$2']
 
 // matches list items with an h2 node as its first child
-const handleListItemWithHeading = [/<li><h2>/g, '<li class="numbered-heading"><h2><span></span>']
+const handleListItemWithHeading = [/<li>(<h2\sid="[a-z\d-]*">)/g, '<li class="numbered-heading">$1<span></span>']
 
 const preformatCode = (code) => code
   .replace(...emphasiseCode)
