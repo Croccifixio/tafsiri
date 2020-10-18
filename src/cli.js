@@ -15,7 +15,7 @@ const { d: assetsDirectory, b: buildDirectory, w: watch } = yargs
 
 function main() {
   if (assetsDirectory) {
-    tafsiri.init(assetsDirectory, buildDirectory, watch)
+    tafsiri.init(assetsDirectory)(buildDirectory)(watch)
   } else {
     yargs.showHelp()
   }

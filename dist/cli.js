@@ -12,7 +12,7 @@ const {
 
 function main() {
   if (assetsDirectory) {
-    tafsiri.init(assetsDirectory, buildDirectory, watch);
+    tafsiri.init(assetsDirectory)(buildDirectory)(watch);
   } else {
     yargs.showHelp();
   }

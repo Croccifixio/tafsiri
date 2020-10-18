@@ -60,7 +60,7 @@ class Tafsiri {
       chokidar.watch(markdownFiles, CHOKIDAR_OPTIONS).on('change', this.processMarkdown);
     };
 
-    this.init = async (assetsDirectory = 'blog', buildDirectory = `${assetsDirectory}/.temp`, watch = false) => {
+    this.init = (assetsDirectory = 'blog') => (buildDirectory = `${assetsDirectory}/.temp`) => (watch = false) => {
       this.assetsDirectory = path.join(cwd, assetsDirectory);
       this.buildDirectory = path.join(cwd, buildDirectory);
       if (watch) this.watchMarkdownFiles();else this.buildMarkdownFiles();
