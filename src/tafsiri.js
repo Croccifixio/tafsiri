@@ -10,6 +10,7 @@ const {
   saveMarkdownFiles,
   createFilesStruct,
 } = require('./_markdownProcessor')
+const { assert } = require('console')
 const cwd = process.cwd()
 
 const CHOKIDAR_OPTIONS = {
@@ -49,7 +50,7 @@ class Tafsiri {
     |> createFilesStruct
     |> stripFrontMatter
     |> parseMarkdownFiles
-    |> saveMarkdownFiles
+    |> saveMarkdownFiles(this.buildDirectory)
   }
 
   watchMarkdownFiles = () => {

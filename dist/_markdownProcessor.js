@@ -37,15 +37,14 @@ const stripFrontMatter = filesStruct => filesStruct.map(fileStruct => {
   };
 });
 
-const saveMarkdownFiles = filesStruct => {
+const saveMarkdownFiles = buildDirectory => filesStruct => {
   filesStruct.forEach(({
     fileName,
     frontMatter,
     parsedMarkdown
   }) => {
-    const buildPath = path.resolve('blog/.temp');
-    const filePath = path.join(buildPath, fileName);
-    if (!fs.existsSync(buildPath)) fs.mkdirSync(buildPath);
+    const filePath = path.join(buildDirectory, fileName);
+    if (!fs.existsSync(buildDirectory)) fs.mkdirSync(buildDirectory);
     createFile(filePath, `${frontMatter}\n${parsedMarkdown}`);
   });
 };

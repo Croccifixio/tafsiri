@@ -18,6 +18,10 @@ const {
   createFilesStruct
 } = require('./_markdownProcessor');
 
+const {
+  assert
+} = require('console');
+
 const cwd = process.cwd();
 const CHOKIDAR_OPTIONS = {
   awaitWriteFinish: {
@@ -48,7 +52,7 @@ class Tafsiri {
       const fileNames = typeof files === 'string' ? path.basename(files) : fs.readdirSync(this.assetsDirectory);
       /* eslint-disable-next-line no-unused-expressions */
 
-      _ref = (_ref2 = (_ref3 = (_ref4 = (_fileNames = fileNames, getMarkdownFiles(_fileNames)), createFilesStruct(_ref4)), stripFrontMatter(_ref3)), parseMarkdownFiles(_ref2)), saveMarkdownFiles(_ref);
+      _ref = (_ref2 = (_ref3 = (_ref4 = (_fileNames = fileNames, getMarkdownFiles(_fileNames)), createFilesStruct(_ref4)), stripFrontMatter(_ref3)), parseMarkdownFiles(_ref2)), saveMarkdownFiles(this.buildDirectory)(_ref);
     };
 
     this.watchMarkdownFiles = () => {
