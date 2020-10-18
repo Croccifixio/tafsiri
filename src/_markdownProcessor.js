@@ -23,7 +23,7 @@ const parseMarkdownFiles = (filesStruct) =>
 const stripFrontMatter = (filesStruct) =>
   filesStruct.map((fileStruct) => {
     const { fileContent } = fileStruct
-    const [, frontMatter, markdown] = fileContent.match(/(^---\r?\n.+?---\r?\n)(.*)/s)
+    const [, frontMatter, markdown] = fileContent.match(/(^(?:---|\+\+\+)\r?\n.+?(?:---|\+\+\+)\r?\n)(.*)/s)
 
     return {
       ...fileStruct,
