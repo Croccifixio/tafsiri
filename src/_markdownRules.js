@@ -15,10 +15,10 @@ const handlePrompt = [/\${2}(\S{1,}\s)/g, '<span class="code-prompt">$1</span>']
 // matches any non-empty string wrapped by quadruple carets
 const handleOuterNestedKeyboardInput = [/\^{4}(.+?)\^{4}/g, '<kbd>^^$1^^</kbd>']
 
-// matches any non-empty string wrapped by douuble carets
+// matches any non-empty string wrapped by double carets
 const handleKeyboardInput = [/\^{2}(.+?)\^{2}/g, '<kbd class="key">$1</kbd>']
 
-// matches a plus sorrounded by spaces in between kbd nodes
+// matches a plus surrounded by spaces in between kbd nodes
 const handleInnerNestedKeyboardInput = [/(<\/kbd>)\s\+\s(<kbd)/g, '$1&nbsp;+&nbsp;$2']
 
 // matches list items with an h2 node as its first child
